@@ -6,11 +6,11 @@ class TelegramMessage
 {
     public string $chatID;
 
-    public string $TelegramMessage;
+    public string $MessageText;
 
-    public function __construct(string $chat_id, string $telegram_message)
+    public function __construct(string $chat_id, string $message_text)
     {
         $this->chatID = $chat_id;
-        $this->TelegramMessage = $telegram_message;
+        $this->MessageText = $message_text;
     }
 }

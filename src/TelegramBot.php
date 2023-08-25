@@ -14,12 +14,12 @@ class TelegramBot
         $this->TelegramBotToken = $telegram_bot_token;
     }
 
-    public function SendTelegramMessage(TelegramMessage $telegram_message): TelegramMessage
+    public function SendTelegramMessage(TelegramMessage $telegram_message): TelegramMessageResult
     {
         $apiUrl = "https://api.telegram.org/bot{$this->TelegramBotToken}/sendMessage";
         $data = array(
             'chat_id' => $telegram_message->chatID,
-            'text' => $telegram_message->TelegramMessage,
+            'text' => $telegram_message->MessageText,
         );
         $options = array(
             'http' => array(
@@ -32,9 +32,9 @@ class TelegramBot
         $result = file_get_contents($apiUrl, false, $context);
 
         if ($result === false) {
-            return $telegram_message;
+            return new TelegramMessageResult($telegram_message, "Error Could Not Send The Message");
         } else {
-            return $telegram_message;
+            return new TelegramMessageResult($telegram_message, "Message Sent Successfuly");
         }
     }
 
