@@ -1,0 +1,16 @@
+{
+    "name": "mitokande/php-telegram",
+    "description": "a php package to send telegram bot messages",
+    "autoload": {
+        "psr-4": {
+            "Mitokande\\PhpTelegram\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mitokande",
+            "email": "benmithat18@gmail.com"
+        }
+    ],
+    "require": {}
+}
