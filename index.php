@@ -5,13 +5,9 @@ use Mitokande\PhpTelegram\TelegramBot;
 use Mitokande\PhpTelegram\TelegramMessage;
 
 
+$bot = TelegramBot::GetInstance("6463429239:AAHa9DoyA5j0wAP8qN_MaMfXB3Ovq2sx9DE");
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$bot = TelegramBot::GetInstance();
-
-$newMessage = new TelegramMessage("500484561", "Test Mesajı");
+$newMessage = new TelegramMessage("500484561", "sTest Mesajı");
 $return = $bot->SendTelegramMessage($newMessage);
 if ($return->Sent) {
     echo '<h1 style="color:green">Message Sent</h1>';

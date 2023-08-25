@@ -13,9 +13,7 @@
             "email": "benmithat18@gmail.com"
         }
     ],
-    "require": {
-        "vlucas/phpdotenv": "^5.5"
-    },
+    "require": {},
     "license": [
         "MIT"
     ]

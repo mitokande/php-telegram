@@ -40,11 +40,11 @@ class TelegramBot
         }
     }
 
-    public static function GetInstance()
+    public static function GetInstance($token)
     {
 
-        if (!isset(self::$instance)) {
-            self::$instance = new TelegramBot($_ENV['TelegramToken']);
+        if (!isset(self::$instance) || self::$instance != $token) {
+            self::$instance = new TelegramBot($token);
         }
         return self::$instance;
     }
