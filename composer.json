@@ -1,5 +1,6 @@
 {
     "name": "mitokande/php-telegram",
+    "version": "1.0",
     "description": "a php package to send telegram bot messages",
     "autoload": {
         "psr-4": {
