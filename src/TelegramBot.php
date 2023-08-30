@@ -6,9 +6,6 @@ use Mitokande\PhpTelegram\TelegramMessage;
 
 class TelegramBot
 {
-
-    private static $instance;
-
     public string $TelegramBotToken;
 
     public function __construct(string $telegram_bot_token)
@@ -40,13 +37,14 @@ class TelegramBot
         }
     }
 
-    public static function GetInstance($token)
+    public function SendMultipleTelegramMessage(array $chat_id_list, string $message)
     {
-
-        if (!isset(self::$instance) || self::$instance != $token) {
-            self::$instance = new TelegramBot($token);
+        $results = [];
+        foreach ($chat_id_list as $chat_id) {
+            $res = $this->SendTelegramMessage(new TelegramMessage($chat_id, $message));
+            $results[$chat_id] = $res->status;
         }
-        return self::$instance;
+        return $results;
     }
 
 }
