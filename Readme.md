@@ -1,7 +1,11 @@
 #PHP TELEGRAM By Mithat Can Turan
-V1.0.3
+
+V1.0.2
+
 What's new?
+
 -Now you can create your bot with TelegramBotCreator Class. 
+
 -Added sending multiple message functionality to TelegramBot Class.
 
 First import my package with composer 
@@ -54,7 +58,7 @@ class TelegramMessager
 
 ```
 
-V1.0.2
+V1.0.1
 First import my package with composer 
 ```
 composer require mitokande/php-telegram@1.0.2
